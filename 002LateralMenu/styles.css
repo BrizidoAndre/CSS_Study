@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#menu-lateral {
+    display: none;
+}
+
+
+
+header {
+    width: 100%;
+    background: brown;
+    display: flex;
+    justify-content: flex-end;
+
+    position: fixed;
+}
+
+label {
+    width: 50px;
+    height: 50px;
+    content: url("hamburguer-menu.svg");
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    padding: 20px;
+
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateX(100%);
+
+    background: brown;
+
+    transition: all .4s;
+
+}
+
+nav a{
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    transition: all .4s;
+
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover{
+    border-bottom: 2px solid white;
+}
+
+#menu-lateral:checked ~ header nav{
+    transform: translateX(0);
+}
+
+@media (min-width: 800px) {
+
+    label{
+        display: none;
+    }
+
+    nav{
+        position: initial;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
+        transform: translateX(0);
+    }
+}
+
+main{
+    display: grid;
+    place-items: center;
+    height: 500px;
+    background: lightblue;
+}
+
+.container{
+    display: inline;
+
+    border: 1px solid red;
+}
+
+main h1 {
+    font-family: "Comic Sans MS", serif;
+    font-size: 64px;
+
+    border-right: 25px solid yellow;
+
+    width: 100%;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation: none;
+}
+
+h1:hover{
+    user-select: none;
+    animation:
+            typing 2s steps(15) alternate-reverse infinite,
+            cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor{
+    50%{border-color: transparent}
+}
+
+@keyframes typing {
+    from{width: 0}
+}
